@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f1ec;
+  --background-accent: #eef1fb;
+  --foreground: #0b0b0b;
+
+  /* ドーナツチャート専用の配色（虹色順）。テーマに関わらず同じ値。 */
+  --wheel-1: #ff6b6b;
+  --wheel-2: #ffa94d;
+  --wheel-3: #ffd43b;
+  --wheel-4: #69db7c;
+  --wheel-5: #38d9c9;
+  --wheel-6: #4dabf7;
+  --wheel-7: #9775fa;
+  --wheel-8: #f783ac;
+
+  --gain-positive: #006300;
+  --gain-negative: #d03b3b;
+  --gain-neutral: #898781;
+
+  --surface-card: #ffffff;
+  --surface-muted: #ece9e3;
+  --surface-focused: #f4f3ef;
+  --ink-primary: #0b0b0b;
+  --ink-secondary: #52514e;
+  --border-hairline: rgba(11, 11, 11, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0d12;
+    --background-accent: #12172a;
+    --foreground: #ffffff;
+
+    --gain-positive: #0ca30c;
+    --gain-neutral: #898781;
+
+    --surface-card: #171a21;
+    --surface-muted: #1f232c;
+    --surface-focused: #20242e;
+    --ink-primary: #ffffff;
+    --ink-secondary: #c3c2b7;
+    --border-hairline: rgba(255, 255, 255, 0.08);
+  }
+}
+
+body {
+  background:
+    radial-gradient(ellipse 900px 500px at 50% -10%, var(--background-accent), transparent),
+    var(--background);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family:
+    var(--font-geist-sans),
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
